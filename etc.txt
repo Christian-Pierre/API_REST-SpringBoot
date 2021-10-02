@@ -1,0 +1,71 @@
+#Para utilizar Mysql com Docker
+    Commandos no bash:
+        $ docker pull mysql:5.7
+    Caso utilize windows terminal:
+        $ docker run -e MYSQL_ROOT_PASSWORD=root --name apirest mysql:5.7
+    Caso queira rodar em background e utilizar o mesmo terminal:
+        $ docker run -e MYSQL_ROOT_PASSWORD=root --name -d apirest mysql:5.7
+    Pegar as informações do container:
+        $ docker inpect apirest | grep IPAddress
+        A saída irá conter as informações de IP para utilizar o servidor Mysql
+            Output Example: 172.17.0.2
+    Utilizar Essas informações no src/main/resources/application.properties
+        informações que podem ser variáveis:
+            spring.datasource.url = jdbc:mysql://172.17.0.2:3306/javaapiexample
+            spring.datasource.password = root 
+
+#Mysql
+    CREATE DATABASE javaapiexample;
+    USE javaapiexample;
+    Utilizar Essas informações no src/main/resources/application.properties
+        informações que podem ser variáveis:
+            spring.datasource.url = jdbc:mysql://172.17.0.2:3306/javaapiexample
+
+#INSOMNIA - TESTES & EXEMPLOS:
+    POST
+    http://localhost:9191/addProduct
+        {
+            "name": "update Example",
+            "quantity": 55,
+            "price": 890
+        }
+    POST
+    http://localhost:9191/addProducts
+        [
+            {
+                "name": "Fone de Ouvido Razer",
+                "quantity": 15,
+                "price": 1500
+            },
+            {
+                "name": "Fone de Ouvido Redragon",
+                "quantity": 45,
+                "price": 300
+            },
+            {
+                "name": "Fone de Ouvido Corsair",
+                "quantity": 25,
+                "price": 890
+            }
+        ]
+    GET
+    http://localhost:9191/products
+        *Output products in your database
+    GET
+    http://localhost:9191/productbyname/phone
+        *Output product for name, on this example is phone 
+    GET
+    http://localhost:9191/productbyid/5
+        *Output product for id, on this example is 5
+    DELETE
+    http://localhost:9191/delete/10
+        *Delete product using Id as param
+    PUT
+    http://localhost:9191/update
+        {
+            "id": 11,
+            "name": "updated!",
+            "quantity": 55,
+            "price": 890
+        }
+        *Update product information where id is 11

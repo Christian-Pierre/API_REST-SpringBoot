@@ -1,0 +1,5 @@
+/home/pierre/dev/Java/Spring Boot Crud Example/API_SpringBoot/src/main/java/com/apirestexample/crudexample/entity/Product.java
+/home/pierre/dev/Java/Spring Boot Crud Example/API_SpringBoot/src/main/java/com/apirestexample/crudexample/CrudexampleApplication.java
+/home/pierre/dev/Java/Spring Boot Crud Example/API_SpringBoot/src/main/java/com/apirestexample/crudexample/service/ProductService.java
+/home/pierre/dev/Java/Spring Boot Crud Example/API_SpringBoot/src/main/java/com/apirestexample/crudexample/repository/ProductRepository.java
+/home/pierre/dev/Java/Spring Boot Crud Example/API_SpringBoot/src/main/java/com/apirestexample/crudexample/controller/ProductController.java

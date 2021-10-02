@@ -1,0 +1,5 @@
+com/apirestexample/crudexample/entity/Product.class
+com/apirestexample/crudexample/CrudexampleApplication.class
+com/apirestexample/crudexample/service/ProductService.class
+com/apirestexample/crudexample/repository/ProductRepository.class
+com/apirestexample/crudexample/controller/ProductController.class
